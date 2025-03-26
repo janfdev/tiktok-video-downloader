@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style type="text/tailwindcss">
       @theme {
         --font-montserrat: "Montserrat", sans-serif;
@@ -21,7 +23,7 @@
     class="font-montserrat text-white h-screen bg-gradient-to-r from-[#0e7490] via-[#3b82f6] to-[#4f46e5]"
   >
     <section
-      class="container w-full mx-auto flex items-center justify-center flex-col py-5"
+      class="container w-full mx-auto flex md:px-4 px-12 items-center justify-center flex-col py-5"
     >
       <div class="flex flex-col gap-3 justify-center items-center">
         <h1 class="text-3xl mt-2 font-semibold">Tiktok Video Downloader</h1>
@@ -31,14 +33,39 @@
       <div class="flex w-full justify-center mt-5 items-center gap-3">
         <input
           type="text"
+          id="videoUrl"
           class="border w-full focus:outline-none px-3 rounded-md py-3"
         />
         <button
-          class="bg-green-500 flex items-center gap-3 py-3 px-5 rounded-md"
+          onclick="downloadVideo()"
+          class="bg-green-500 cursor-pointer flex items-center gap-3 py-3 px-5 rounded-md"
         >
           <img src="download-.svg" class="w-10" alt="" />
           <span>Download</span>
         </button>
+      </div>
+
+      <div id="previewContainer" class="mt-4 hidden">
+        <img
+          id="thumbnail"
+          class="w-full rounded-lg shadow-md mb-3"
+          alt="Thumbnail Video"
+        />
+        <video
+          controls
+          class="w-full rounded-lg shadow-md"
+          src="https://vt.tiktok.com/ZSrLJvV35/"
+          id="videoPreview"
+        ></video>
+        <a id="downloadNoWm" download class="bg-teal-400 py-3 px-4 rounded-md"
+          >Download Video</a
+        >
+        <a id="downloadWithWm" download class="bg-teal-400 py-3 px-4 rounded-md"
+          >Download Video</a
+        >
+        <a id="downloadAudio" download class="bg-teal-400 py-3 px-4 rounded-md"
+          >Download Video</a
+        >
       </div>
     </section>
 
