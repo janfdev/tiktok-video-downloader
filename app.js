@@ -27,15 +27,13 @@ async function downloadVideo() {
       const videoNoWm = result.data.dlink.nowm;
       const videoWithWm = result.data.dlink.wm;
       const audio = result.data.dlink.audio;
-      const thumbnail = result.data.dlink.cover;
 
       document.getElementById("videoPreview").src = videoNoWm;
-      document.getElementById("thumbnail").src = thumbnail;
-      document.getElementById("downloadWithWm").src = videoWithWm;
-      document.getElementById("downloadNoWm").src = videoNoWm;
-      document.getElementById("downloadAudio").src = audio;
+      document.getElementById("downloadWithWm").href = videoWithWm;
+      document.getElementById("downloadNoWm").href = videoNoWm;
+      document.getElementById("downloadAudio").href = audio;
 
-      document.getElementById("previewContainer").classList.remove = "hidden";
+      document.getElementById("previewContainer").classList.remove("hidden");
       Swal.close();
     } else {
       Swal.fire("Gagal", "URL terjadi kesalahan", "error");
